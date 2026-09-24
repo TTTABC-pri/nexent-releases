@@ -1,23 +1,25 @@
 # Nexent Releases
 
-[Nexent](https://github.com/TTTABC-pri/nexent) 的 macOS 安装包与自动更新清单。本仓库只用于发布，没有源代码。
+English | [简体中文](README_CN.md)
 
-## 安装
+macOS installers and the auto-update manifest for [Nexent](https://github.com/TTTABC-pri/nexent). This repository only hosts releases; it contains no source code.
 
-需要 macOS 13 或更高版本（Apple Silicon 与 Intel 均可），并已安装 [Claude Code](https://docs.claude.com/en/docs/claude-code) 与 git。
+## Install
 
-1. 从 [最新 Release](https://github.com/TTTABC-pri/nexent-releases/releases/latest) 下载 `Nexent_<版本>_universal.dmg`。
-2. 打开 dmg，把 Nexent 拖进"应用程序"。
+Requires macOS 13 or later (Apple Silicon or Intel), with [Claude Code](https://docs.claude.com/en/docs/claude-code) and git installed.
 
-### 第一次打开
+1. Download `Nexent_<version>_universal.dmg` from the [latest release](https://github.com/TTTABC-pri/nexent-releases/releases/latest).
+2. Open the dmg and drag Nexent into Applications.
 
-Nexent 目前没有 Apple 开发者签名和公证，macOS 会拦截第一次打开。放行方法任选其一：
+### First launch
 
-- **系统设置**：先打开一次 Nexent，macOS 提示无法验证开发者，关闭这个提示。然后打开"系统设置 → 隐私与安全性"，在"安全性"一栏找到 Nexent，点"仍要打开"，在弹窗中再点"仍要打开"并输入登录密码。
-- **终端**：`xattr -dr com.apple.quarantine /Applications/Nexent.app`
+Nexent is not signed with an Apple Developer ID or notarized yet, so macOS blocks the first launch. Allow it in either of these ways:
 
-只需放行一次。之后的版本通过应用内更新安装（设置 → 关于 → 检查更新）。
+- **System Settings**: open Nexent once. macOS says it cannot verify the developer; close that message. Then open **System Settings → Privacy & Security**, find Nexent under **Security**, click **Open Anyway**, then click **Open Anyway** in the dialog and enter your login password.
+- **Terminal**:
 
-## Install (English)
+  ```bash
+  xattr -dr com.apple.quarantine /Applications/Nexent.app
+  ```
 
-Download `Nexent_<version>_universal.dmg` from the [latest release](https://github.com/TTTABC-pri/nexent-releases/releases/latest) and drag Nexent into Applications. Nexent is not notarized yet, so macOS blocks the first launch: open it once, then go to **System Settings → Privacy & Security** and click **Open Anyway**, or run `xattr -dr com.apple.quarantine /Applications/Nexent.app`. Later versions install through the in-app updater.
+You only need to do this once. Later versions install through the in-app updater (Settings → About → Check for updates).
